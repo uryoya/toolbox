@@ -1,7 +1,8 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
-import "./App.css";
+import "./index.css";
+import { css } from "../styled-system/css";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <main className="container">
-      <h1>Welcome to Tauri + React</h1>
+      <h1 className={css({ fontSize: "2xl", fontWeight: "bold" })}>
+        Welcome to Tauri + React + Panda CSS
+      </h1>
 
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
