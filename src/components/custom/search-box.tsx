@@ -1,13 +1,12 @@
 import { Field } from "@ark-ui/react/field";
 import { css } from "styled-system/css";
 import { Search } from "lucide-react"; // LucideのSearchアイコン
-import React from "react";
 
 type Props = {
   placeholder: string;
 };
 
-export const SearchBox: React.FC<Props> = ({ placeholder }) => {
+export const SearchBox = ({ placeholder }: Props) => {
   return (
     <Field.Root
       className={css({
@@ -23,8 +22,8 @@ export const SearchBox: React.FC<Props> = ({ placeholder }) => {
           padding: "0.75rem 3rem 0.75rem 1rem",
           fontSize: "md",
           borderRadius: "full",
-          border: "1px solid",
-          borderColor: "gray",
+          // border: "1px solid",
+          // borderColor: "gray",
           boxShadow: "sm",
           backgroundColor: "white",
           _focus: {
