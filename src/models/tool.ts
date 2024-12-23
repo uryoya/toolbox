@@ -1,5 +1,7 @@
+import React from "react";
+
 export type Tool = {
   name: string;
   description: string;
-  fn: (name: string) => Promise<string>;
+  toolPanel: React.FC;
 };

@@ -1,4 +1,3 @@
-import { invoke } from "@tauri-apps/api/core";
 import "./index.css";
 import { css } from "styled-system/css";
 import { Container, Wrap } from "styled-system/jsx";
@@ -6,48 +5,20 @@ import { SearchBox } from "./components/custom/search-box";
 import { ToolCard } from "./components/custom/tool-card";
 import { ToolDialog } from "./components/custom/tool-dialog";
 import { Tool } from "./models/tool";
+import Greeting from "./toolPanels/Greeting";
+import UuidV4 from "./toolPanels/UuidV4";
 
 const tools: Tool[] = [
   {
     name: "Greet from Rust",
     description: "...",
-    fn: async (name: string) => {
-      const result = await invoke("greet", { name });
-      return JSON.stringify(result);
-    },
+    toolPanel: Greeting,
   },
-  // {
-  //   name: "UUID v1",
-  //   description: "Generate UUID v1",
-  //   fn: () => {
-  //     const uuid = crypto.randomUUID();
-  //     return Promise.resolve(uuid);
-  //   },
-  // },
-  // {
-  //   name: "UUID v3",
-  //   description: "Generate UUID v3",
-  //   fn: () => {
-  //     const uuid = crypto.randomUUID();
-  //     return Promise.resolve(uuid);
-  //   },
-  // },
   {
     name: "UUID v4",
     description: "Generate UUID v4",
-    fn: () => {
-      const uuid = crypto.randomUUID();
-      return Promise.resolve(uuid);
-    },
+    toolPanel: UuidV4,
   },
-  // {
-  //   name: "UUID v7",
-  //   description: "Generate UUID v7",
-  //   fn: () => {
-  //     const uuid = crypto.randomUUID();
-  //     return Promise.resolve(uuid);
-  //   },
-  // },
 ];
 
 const App = () => {
